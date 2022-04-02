@@ -36,11 +36,11 @@ def opencv_open_image():
     im = cv2.imread(file_name)
     cv2.imsow(file_name, im)
     cv2.waitKey(10000)   #10초
-    
+
 def matplotlib_open_image():
     import matplotlib.pyplot as plt
     import matplotlib.image as mpimg
-    
+
     file_name = 'Images/cheetah.png'
     im = mpimg.imread(file_name)
     plt.imshow(im)
@@ -166,7 +166,7 @@ def point_operation_process_multiplication():     #밝기 곱
     from skimage import io
     from skimage.color import rgb2gray
     import matplotlib.pyplot as plt
-    file_name = 'Images/cameraman.jpg'
+    file_name = 'Images/player.png'
     im = io.imread(file_name)
     im_gray = rgb2gray(im)
 
@@ -184,6 +184,8 @@ def point_operation_process_multiplication():     #밝기 곱
         axs[row, col].title.set_text(f'k={k}'), axs[row, col].axis('off')
     plt.tight_layout()
     plt.show()
+
+
 
 def inverting_image() :     #이미지 반전
     from skimage import io
@@ -219,11 +221,13 @@ def detect_new_object() :     #틀린 픽셀 검색
     plt.tight_layout(), plt.show()
     plt.imshow(im), plt.axis('off'), plt.show()
 
+
+
 def calculate_hist_of_image():
     from skimage import io
     import matplotlib.pyplot as plt
     import numpy as np
-    file = 'images/cameraman.jpg'
+    file = 'images/room.jpg'
     im = io.imread(file)
     im_flatten = im.flatten()
     hist = np.zeros(256)
@@ -274,3 +278,5 @@ def hist_equalization():
     axs[0, 1].imshow(im_equalization), axs[1,1].hist(im_equalization.ravel(), bins=256)
     plt.tight_layout()
     plt.show()
+
+
